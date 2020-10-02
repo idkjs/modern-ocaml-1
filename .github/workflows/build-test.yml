@@ -15,7 +15,8 @@ jobs:
           - windows-latest
         ocaml-version:
           - 4.09.1
-          - 4.10.0
+          - 4.10.1
+          - 4.11.1
 
     runs-on: ${{ matrix.os }}
 
@@ -35,7 +36,7 @@ jobs:
           opam depext modern-ocaml --yes
           opam depext modern-ocaml --yes --with-doc
           opam depext modern-ocaml --yes --with-test
-          
+
       - run: opam install . --deps-only --with-doc --with-test
 
       - name: build project
